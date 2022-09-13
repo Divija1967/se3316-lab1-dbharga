@@ -14,9 +14,42 @@
 *::after{
     font-family: inherit;
     text-align: center;
+    font-family: 'Roboto', sans-serif;
 }
 
 /* remove bullets from list */
 ul {
     list-style: none;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* grid dsiplay */
+li {
+    display: inline-block;
+    vertical-align: top;
+}
+
+/* change image properties */
+img {
+    width:  150px;
+    height: 150px;
+    object-fit: cover;
+    float: left;
+    margin-bottom: 10px;
+}
+
+/* visually change each item */
+.poke{
+    margin: 2%;
+    opacity: 0.6;
+    border: 5px solid var(--neutral-clr);
+    border-radius: 25px;
+    padding-top: 10px;
+}
+
+/* properties after hovering on a pokemon */
+.poke:hover{
+    opacity: 1;
+    cursor: pointer;
 }
