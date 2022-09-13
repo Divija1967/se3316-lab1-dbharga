@@ -53,3 +53,8 @@ img {
     opacity: 1;
     cursor: pointer;
 }
+
+/* chnage link colours */
+a{
+    color: var(--light-clr);
+}
