@@ -1,0 +1,22 @@
+/* colour palette and set base*/
+:root{
+    --neutral-clr: #0077bc;
+    --text-clr: #e3f5fd;
+    --dark-clr: #065a9c;
+    --light-clr: #c2d5e4;
+    --highlight-clr: #e64556;
+    background-color: var(--dark-clr);
+    color: var(--text-clr);
+}
+
+*,
+*::before,
+*::after{
+    font-family: inherit;
+    text-align: center;
+}
+
+/* remove bullets from list */
+ul {
+    list-style: none;
+}
