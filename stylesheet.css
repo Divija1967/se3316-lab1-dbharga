@@ -5,7 +5,7 @@
     --dark-clr: #065a9c;
     --light-clr: #c2d5e4;
     --highlight-clr: #e64556;
-    background-color: var(--dark-clr);
+    background-color: var(--neutral-clr);
     color: var(--text-clr);
 }
 
@@ -16,6 +16,33 @@
     text-align: center;
     font-family: 'Roboto', sans-serif;
 }
+
+/* For the search bars at the top */
+.search{
+    display: inline-flex;
+    margin: 30px;
+}
+
+#num, #name{
+    padding: 10px;
+    outline: none;
+    border: 1px solid var(--light-clr);
+    border-radius: 25px 5px 5px 25px;
+    margin-left: 20px;
+}
+
+.btn{
+    color: var(--light-clr);
+    background-color: var(--dark-clr);
+    border: var(--dark-clr);
+}
+
+.btn:hover{
+    background-color: var(--highlight-clr);
+    cursor: pointer;
+}
+
+
 
 /* remove bullets from list */
 ul {
@@ -43,7 +70,7 @@ img {
 .poke{
     margin: 2%;
     opacity: 0.6;
-    border: 5px solid var(--neutral-clr);
+    border: 5px solid var(--light-clr);
     border-radius: 25px;
     padding-top: 10px;
 }
