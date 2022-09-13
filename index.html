@@ -7,6 +7,7 @@
 <meta name="author" content="Divija Bhargava">
 <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="stylesheet.css">
+<link rel="script" href="script.js">
 </head>
 <body>
 <!-- Place your content here -->
@@ -15,82 +16,83 @@
 
 <!-- the search bars displayed on top -->
 <div class="search">
-    <input type="text" name="by-number" id="num" placeholder="Search by number...">
+    <input type="text" name="by-number" id="by-num" placeholder="Search by number...">
     <button class="btn">Search</button>
-    <input type="text" name="by-name" id="name" placeholder="Search by name...">
+    <input type="text" name="by-name" id="by-nam" placeholder="Search by name...">
     <button class="btn">Search</button>
 </div>
 
 <!-- pokemon images in an unordered list -->
 <ul id="pokemon-list">
     <li class="poke">
-        <img src="pokemon\1.png" alt="bulbasaur"> <p>Bulbasaur</p>
+        <img src="pokemon\1.png" alt="bulbasaur"><p class="number">#001</p> <p>Bulbasaur</p>
     </li>
     <li class="poke">
-        <img src="pokemon\2.png" alt="ivysaur"> <p>Ivysaur</p>
+        <img src="pokemon\2.png" alt="ivysaur"><p class="number">#002</p>  <p>Ivysaur</p>
     </li>
-     <!-- <li class="poke">
-        <img src="pokemon\3-mega.png" alt="Venasaur"> <p>Venasaur</p> 
-    </li> -->
+    
     <li class="poke">
-        <img src="pokemon\3.png" alt="venasaur"> <p>Venasaur</p>
+        <img src="pokemon\3.png" alt="venasaur"> <p class="number">#003</p> <p>Venasaur</p>
     </li>
-    <li class="poke">
-        <img src="pokemon\4.png" alt="charmander"> <p>Charmander</p>
+     <li class="poke">
+        <img src="pokemon\3-mega.png" alt="mega-venasaur"> <p class="number">#004</p><p>Mega-Venasaur</p> 
     </li>
     <li class="poke">
-        <img src="pokemon\5.png" alt="charmeleon"> <p>Charmeleon</p>
+        <img src="pokemon\4.png" alt="charmander"> <p class="number">#005</p> <p>Charmander</p>
     </li>
     <li class="poke">
-        <img src="pokemon\6.png" alt="charizard"> <p>Charizard</p>
-    </li>
-    <!-- <li class="poke">
-        <img src="pokemon\6-mega-x.png" alt="Watortle"> <p>Watortle</p>
+        <img src="pokemon\5.png" alt="charmeleon"> <p class="number">#006</p> <p>Charmeleon</p>
     </li>
     <li class="poke">
-        <img src="pokemon\6-mega-y.png" alt="charizard"><p>Poke 12</p>
-    </li> -->
-    <li class="poke">
-        <img src="pokemon\7.png" alt="squirtle"> <p>Squirtle</p>
+        <img src="pokemon\6.png" alt="charizard"> <p class="number">#007</p> <p>Charizard</p>
     </li>
     <li class="poke">
-        <img src="pokemon\8.png" alt="wartortle"> <p>Wartortle</p>
+        <img src="pokemon\6-mega-x.png" alt="mega-x-charizard"> <p class="number">#008</p><p>Mega-x-Charizard</p>
     </li>
     <li class="poke">
-        <img src="pokemon\9.png" alt="blastoise"> <p>Blastoise</p>
-    </li>
-    <!-- <li class="poke">
-        <img src="pokemon\9-mega.png" alt="my"> <p>Poke 12</p>
-    </li> -->
+        <img src="pokemon\6-mega-y.png" alt="mega--ycharizard"><p class="number">#009</p><p>Mega-y-Charizard</p>
+    </li> 
     <li class="poke">
-        <img src="pokemon\10.png" alt="caterpie"> <p>Caterpie</p>
+        <img src="pokemon\7.png" alt="squirtle"> <p class="number">#010</p> <p>Squirtle</p>
     </li>
     <li class="poke">
-        <img src="pokemon\11.png" alt="metapod"> <p>Metapod</p>
+        <img src="pokemon\8.png" alt="wartortle"> <p class="number">#011</p> <p>Wartortle</p>
     </li>
     <li class="poke">
-        <img src="pokemon\12.png" alt="butterfree"> <p>Butterfree</p>
+        <img src="pokemon\9.png" alt="blastoise"> <p class="number">#012</p> <p>Blastoise</p>
     </li>
     <li class="poke">
-        <img src="pokemon\13.png" alt="weedle"> <p>Weedle</p>
+        <img src="pokemon\9-mega.png" alt="mega-blastoise"> <p class="number">#013</p><p>Mega-Blastoise</p>
     </li>
     <li class="poke">
-        <img src="pokemon\14.png" alt="kakuna"> <p>Kakuna</p>
+        <img src="pokemon\10.png" alt="caterpie"><p class="number">#014</p>  <p>Caterpie</p>
     </li>
     <li class="poke">
-        <img src="pokemon\15.png" alt="beedrill"> <p>Beedrill</p>
+        <img src="pokemon\11.png" alt="metapod"><p class="number">#015</p>  <p>Metapod</p>
     </li>
     <li class="poke">
-        <img src="pokemon\16.png" alt="pidgeotto"> <p>Pidgeotto</p>
+        <img src="pokemon\12.png" alt="butterfree"><p class="number">#016</p>  <p>Butterfree</p>
     </li>
     <li class="poke">
-        <img src="pokemon\18.png" alt="pidgeot"> <p>Pidgeot</p>
+        <img src="pokemon\13.png" alt="weedle"><p class="number">#017</p>  <p>Weedle</p>
     </li>
     <li class="poke">
-        <img src="pokemon\19.png" alt="ratatta"> <p>Ratatta</p>
+        <img src="pokemon\14.png" alt="kakuna"> <p class="number">#018</p> <p>Kakuna</p>
     </li>
     <li class="poke">
-        <img src="pokemon\20.png" alt="ratticate"> <p>Ratticate</p>
+        <img src="pokemon\15.png" alt="beedrill"> <p class="number">#019</p> <p>Beedrill</p>
+    </li>
+    <li class="poke">
+        <img src="pokemon\16.png" alt="pidgeotto"> <p class="number">#020</p> <p>Pidgeotto</p>
+    </li>
+    <li class="poke">
+        <img src="pokemon\18.png" alt="pidgeot"> <p class="number">#021</p> <p>Pidgeot</p>
+    </li>
+    <li class="poke">
+        <img src="pokemon\19.png" alt="ratatta"> <p class="number">#022</p> <p>Ratatta</p>
+    </li>
+    <li class="poke">
+        <img src="pokemon\20.png" alt="ratticate"> <p class="number">#023</p> <p>Ratticate</p>
     </li>
 </ul>
 

@@ -23,12 +23,17 @@
     margin: 30px;
 }
 
-#num, #name{
+#by-num, #by-nam{
     padding: 10px;
     outline: none;
     border: 1px solid var(--light-clr);
     border-radius: 25px 5px 5px 25px;
     margin-left: 20px;
+}
+
+.number{
+    font-size: small;
+    margin: none;
 }
 
 .btn{
