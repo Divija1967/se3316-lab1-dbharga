@@ -19,8 +19,9 @@
 
 /* For the search bars at the top */
 .search{
-    display: inline-flex;
+    display: inline-block;
     margin: 30px;
+    position: relative;
 }
 
 #num-input, #name-input{
@@ -29,6 +30,7 @@
     border: 1px solid var(--light-clr);
     border-radius: 25px 5px 5px 25px;
     margin-left: 20px;
+    box-sizing: border-box;
 }
 
 .number{
@@ -84,7 +86,21 @@ img {
     cursor: pointer;
 }
 
-/* chnage link colours */
-a{
-    color: var(--light-clr);
-}
+/* dropdown menu display */ 
+  .num-list {
+    position: center;
+    background-color: var(--light-clr);    
+  }
+  
+  .num-list a {
+    color: var(--dark-clr);
+    display: block;
+    padding-top: 10px;
+  }
+  
+  .num-list a:hover {
+    background-color: var(--text-clr);
+    cursor: pointer;
+    }
+  
+  .show {display: block;}

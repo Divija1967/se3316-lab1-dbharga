@@ -15,35 +15,46 @@
 <p>Find your Pokémon here!</p>
 
 <!-- the search bars displayed on top -->
+<!-- drop down of the search bar -->
 <div class="search">
     <input 
-        type="text" 
+        onkeyup="searchPokemon()"
+        type="number" 
         name="num-input" 
         id="num-input" 
         placeholder="Search by number...">
-    <button onclick="validateNumber()" class="btn">Search</button>
-    <input 
+    <button onclick="searchPokemon()" class="btn">Search</button>
+    <div id="num-dropdown" class="num-list">   
+        <a onclick="show(1)">001</a>
+        <a onclick="show(2)">002</a>
+        <a onclick="show(3)">003</a>
+        <a onclick="show(4)">004</a>
+        <a onclick="show(5)">005</a>
+        <a onclick="show(6)">006</a>
+        <a onclick="show(7)">007</a>
+      </div>
+    <!-- <input 
         type="text" 
         name="name-input" 
         id="name-input" 
         placeholder="Search by name...">
-    <button onclick="validateName()" class="btn">Search</button>
+    <button onclick="validateName()" class="btn">Search</button> -->
 </div>
 
 <!-- pokemon images in an unordered list -->
 <ul id="pokemon-list">
     <li class="poke">
-        <img src="pokemon\1.png" alt="bulbasaur"><p class="number">#001</p> <p>Bulbasaur</p>
+        <img src="pokemon\1.png" onclick="pokemonInfo()" alt="bulbasaur"><p class="number">#001</p> <p>Bulbasaur</p>
     </li>
     <li class="poke">
-        <img src="pokemon\2.png" alt="ivysaur"><p class="number">#002</p>  <p>Ivysaur</p>
+        <img src="pokemon\2.png" onclick="pokemonInfo()" alt="ivysaur"><p class="number">#002</p>  <p>Ivysaur</p>
     </li>
     
     <li class="poke">
-        <img src="pokemon\3.png" alt="venasaur"> <p class="number">#003</p> <p>Venasaur</p>
+        <img src="pokemon\3.png" onclick="pokemonInfo()" alt="venasaur"> <p class="number">#003</p> <p>Venasaur</p>
     </li>
      <li class="poke">
-        <img src="pokemon\3-mega.png" alt="mega-venasaur"> <p class="number">#003</p><p>Mega-Venasaur</p> 
+        <img src="pokemon\3-mega.png" onclick="pokemonInfo()" alt="mega-venasaur"> <p class="number">#003</p><p>Mega-Venasaur</p> 
     </li>
     <li class="poke">
         <img src="pokemon\4.png" alt="charmander"> <p class="number">#004</p> <p>Charmander</p>

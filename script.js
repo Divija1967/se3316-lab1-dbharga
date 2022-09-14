@@ -38,6 +38,7 @@ function validateNumber(){
         alert("Plase enter a number");
     }
 }
+
 // function byNumber(){
 //     for(let i = 0; i < pokemon.length; i++){
 //         if(pokemon[i].number === document.getElementById('num-input').value){
@@ -47,8 +48,20 @@ function validateNumber(){
 //     }
 // }
 
+
 function pokemonInfo(){
-    alert("Info about Pokémon!");
+      
+
+//     for(let i = 0; i < pokemon.length; i++){
+//         var $img = document.getElementsByTagName("img")[i];   // get alt name of the image clicked on
+//                 if(pokemon[i].name.toLowerCase() === $img.alt ){
+//                     console.log("clicked");
+//                 }
+//             }
+}
+
+function show(i){
+    alert(`${pokemon[i-1].name}\n#${pokemon[i-1].number} \nType: ${pokemon[i-1].type}`);
 }
 
 // to validate input of the Name 
@@ -64,9 +77,9 @@ function byName(){
 }
 // to validate input of the String Search Bar
 function validateName(){
-    const numInput = document.getElementById('num-input').value;
-    if(isNaN(numInput)){
-        byName(numInput);
+    const nameInput = document.getElementById('name-input').value;
+    if(isNaN(nameInput)){
+        show();
     }
     else{
         alert("Plase enter a name");
