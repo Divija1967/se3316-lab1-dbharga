@@ -23,7 +23,7 @@
     margin: 30px;
 }
 
-#by-num, #by-nam{
+#num-input, #name-input{
     padding: 10px;
     outline: none;
     border: 1px solid var(--light-clr);
@@ -46,8 +46,6 @@
     background-color: var(--highlight-clr);
     cursor: pointer;
 }
-
-
 
 /* remove bullets from list */
 ul {
@@ -74,7 +72,7 @@ img {
 /* visually change each item */
 .poke{
     margin: 2%;
-    opacity: 0.6;
+    opacity: 1;
     border: 5px solid var(--light-clr);
     border-radius: 25px;
     padding-top: 10px;
@@ -82,7 +80,7 @@ img {
 
 /* properties after hovering on a pokemon */
 .poke:hover{
-    opacity: 1;
+    opacity: 0.6;
     cursor: pointer;
 }
 
