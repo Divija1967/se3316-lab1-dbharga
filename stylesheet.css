@@ -33,7 +33,7 @@
     box-sizing: border-box;
 }
 
-.number{
+p {
     font-size: small;
     margin: none;
 }
@@ -42,6 +42,7 @@
     color: var(--light-clr);
     background-color: var(--dark-clr);
     border: var(--dark-clr);
+    padding: 10px 25px 10px 25px;
 }
 
 .btn:hover{
@@ -56,7 +57,7 @@ ul {
     text-align: center;
 }
 
-/* grid dsiplay */
+/* grid display */
 li {
     display: inline-block;
     vertical-align: top;
@@ -86,21 +87,4 @@ img {
     cursor: pointer;
 }
 
-/* dropdown menu display */ 
-  .num-list {
-    position: center;
-    background-color: var(--light-clr);    
-  }
   
-  .num-list a {
-    color: var(--dark-clr);
-    display: block;
-    padding-top: 10px;
-  }
-  
-  .num-list a:hover {
-    background-color: var(--text-clr);
-    cursor: pointer;
-    }
-  
-  .show {display: block;}
