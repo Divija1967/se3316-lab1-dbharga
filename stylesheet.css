@@ -87,4 +87,9 @@ img {
     cursor: pointer;
 }
 
+/* hide the pokemon in list */
+#pokemon-info a{
+    display: none;
+}
+
   

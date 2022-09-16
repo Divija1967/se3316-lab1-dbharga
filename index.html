@@ -22,57 +22,32 @@
         name="num-input" 
         id="num-input" 
         placeholder="Search by number...">
-    <button class="btn">Search</button>
+    <button class="btn" onclick="byNumber()">Search</button>
     <input 
         onkeyup="validateName()"
         type="text" 
         name="name-input" 
         id="name-input" 
         placeholder="Search by name...">
-    <button class="btn">Search</button>
+    <button class="btn" onclick="byName()">Search</button>
 </div>
-<!-- drop down of the search bar -->
-<!-- <div class="search">
-    <button onclick="searchPokemon()" class="btn">Search</button>
-    <div id="num-dropdown" class="drop-list"> 
-    <input 
-        onkeyup="searchPokemon()"
-        type="number" 
-        name="num-input" 
-        id="num-input" 
-        placeholder="Search by number..."
-        onclick="toggle()">
 
-        <a onclick="show(1)">001</a>
-        <a onclick="show(2)">002</a>
-        <a onclick="show(3)">003</a>
-        <a onclick="show(4)">004</a>
-        <a onclick="show(5)">005</a>
-        <a onclick="show(6)">006</a>
-        <a onclick="show(7)">007</a>
-    </div>
-<div id="name-dropdown" class="drop-list">  
-    <input 
-        type="text" 
-        name="name-input" 
-        id="name-input" 
-        placeholder="Search by name...">
-    <button onclick="validateName()" class="btn">Search</button>
-     
-        <a onclick="show(1)">Bulbasaur</a>
-        <a onclick="show(2)">Ivysaur</a>
-        <a onclick="show(3)">Venasaur</a>
-        <a onclick="show(4)">Charmander</a>
-        <a onclick="show(5)">Charmeleon</a>
-        <a onclick="show(6)">Charizard</a>
-        <a onclick="show(7)">007</a>
-    </div> 
-</div>  -->
+<!-- Pokemon Descriptions -->
+<div id="pokemon-info">
+    <a class="bulb" href="#">bulbasaur</a>
+    <a href="#">ivysaur</a>
+    <a href="#">bulbasaur3</a>
+    <a href="#">bulbasaur4</a>
+    <a href="#">bulbasaur5</a>
+    <a href="#">bulbasaur6</a>
+
+</div>
+
 
 <!-- pokemon images in an unordered list -->
 <ul id="pokemon-list">
     <li class="poke">
-        <img src="pokemon\1.png" onclick="pokemonInfo()" alt="bulbasaur"><p class="number">#001</p> <h3>Bulbasaur</h3>
+        <img src="pokemon\1.png" onclick="pokemonInfo()" alt="bulbasaur"><p class="number">#001</p> <h3 class="p">Bulbasaur</h3>
     </li>
     <li class="poke">
         <img src="pokemon\2.png" onclick="pokemonInfo()" alt="ivysaur"><p class="number">#002</p>  <h3>Ivysaur</h3>

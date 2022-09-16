@@ -1,107 +1,84 @@
 // array of pokemon objects
 let pokemon = [
-    {name: "Bulbasaur", number: 001, type: "Grass/Poison", weather: "Clear/Cloudy",rarity: "4", evolutionStage: "1", atk: "118"},
-    {name: "Ivysaur", number: 002, type: "Grass/Poison", weather: "Clear/Cloudy",rarity: "5", evolutionStage: "2", atk: "151" },
-    {name: "Venasaur", number: 003, type: "Grass/Poison", weather: "Clear/Cloudy",rarity: "6", evolutionStage: "3", atk: "198"},
-    {name: "Mega-Venasaur", number: 003, type: "Grass/Poison", weather: "Clear/Cloudy",rarity: "6", evolutionStage: "3", atk: "198"},
-    {name: "Charmander", number: 004, type: "Fire", weather: "Clear",rarity: "4", evolutionStage: "1", atk: "116"},
-    {name: "Charmeleon", number: 005, type: "Fire", weather: "Clear",rarity: "5", evolutionStage: "2", atk: "158"},
-    {name: "Charizard", number: 006, type: "Fire/Flying", weather: "Clear/Windy",rarity: "6", evolutionStage: "3", atk: "223"},
-    {name: "Mega-X-Charizard", number: 006, type: "Fire/Flying", weather: "Clear/Windy",rarity: "6", evolutionStage: "3", atk: "223"},
-    {name: "Mega-Y-Charizard", number: 006, type: "Fire/Flying", weather: "Clear/Windy",rarity: "6", evolutionStage: "3", atk: "223"},
-    {name: "Squirtle", number: 007, type: "Water", weather: "Rain",rarity: "4", evolutionStage: "1", atk: "94"},
-    {name: "Wartortle", number: 00, type: "Water", weather: "Rain",rarity: "5", evolutionStage: "2", atk: "126"},
-    {name: "Blastoise", number: 00, type: "Water", weather: "Rain",rarity: "6", evolutionStage: "3", atk: "171"},
-    {name: "Mega-Blastoise", number: 00, type: "Water", weather: "Rain",rarity: "6", evolutionStage: "3", atk: "171"},
-    {name: "Caterpie", number: 002, type: "Bug", weather: "Rain",rarity: "1", evolutionStage: "1", atk: "55"},
-    {name: "Metapod", number: 003, type: "Bug", weather: "Rain",rarity: "3", evolutionStage: "2", atk: "45"},
-    {name: "Butterfree", number: 001, type: "Bug/Flying", weather: "Rain/Windy",rarity: "4", evolutionStage: "3", atk: "167"},
-    {name: "Weedle", number: 002, type: "Bug/Poison", weather: "Rain/Cloudy",rarity: "1", evolutionStage: "1", atk: "63"},
-    {name: "Kakuna", number: 003, type: "Bug/Poison", weather: "Rain/Cloudy",rarity: "3", evolutionStage: "2", atk: "46"},
-    {name: "Beedrill", number: 001, type: "Bug/Poison", weather: "Rain/Cloudy",rarity: "4", evolutionStage: "3", atk: "169"},
-    {name: "Mega-Beedrill", number: 014, type: "Bug/Poison", weather: "Rain/Cloudy",rarity: "4", evolutionStage: "3", atk: "169"},
-    {name: "Pidgey", number: 015, type: "Normal/Flying", weather: "Partly Cloudy/Windy",rarity: "1", evolutionStage: "1", atk: "85"},
-    {name: "Pidgeotto", number: 016, type: "Normal/Flying", weather: "Partly Cloudy/Windy",rarity: "3", evolutionStage: "2", atk: "117"},
-    {name: "Pidgeot", number: 017, type: "Normal/Flying", weather: "Partly Cloudy/Windy",rarity: "4", evolutionStage: "3", atk: "166"},
-    {name: "Mega-Pidgeot", number: 01, type: "Normal/Flying", weather: "Partly Cloudy/Windy",rarity: "4", evolutionStage: "3", atk: "166"},
-    {name: "Ratatta", number: 01, type: "Normal", weather: "Partly Cloudy",rarity: "1", evolutionStage: "1", atk: "103"},
-    {name: "Raticatte", number: 020, type: "Normal", weather: "Partly Cloudy",rarity: "4", evolutionStage: "2", atk: "161"},
+    {name: "Bulbasaur", number: 001, description: "Type Combo: Grass/Poison\nWeather: Clear/Cloudy\nRarity: 4\nEvolution Stage: 1\nBase Attack Level: 118"},
+    {name: "Ivysaur", number: 002, description: "Type Combo: Grass/Poison\nWeather: Clear/Cloudy\nRarity: 5\nEvolution Stage: 2\nBase Attack Level: 151" },
+    {name: "Venasaur", number: 003, description: "Type Combo: Grass/Poison\nWeather: Clear/Cloudy\nRarity: 6\nEvolution Stage: 3\nBase Attack level: 198"},
+    {name: "Mega-Venasaur", number: 003, description: "Type Combo: Grass/Poison\nWeather: Clear/Cloudy\nRarity: 6\nEvolution Stage: 3", atk: "198"},
+    {name: "Charmander", number: 004, description: "Type Combo: Fire\nWeather: Clear\nRarity: 4\nEvolution Stage: 1\nBase Attack level: 116"},
+    {name: "Charmeleon", number: 005, description: "Type Combo: Fire\nWeather: Clear\nRarity: 5\nEvolution Stage: 2\nBase Attack level: 158"},
+    {name: "Charizard", number: 006, description: "Type Combo: Fire/Flying\nWeather: Clear/Windy\nRarity: 6\nEvolution Stage: 3\nBase Attack level: 223"},
+    {name: "Mega-X-Charizard", number: 006, description: "Type Combo: Fire/Flying\nWeather: Clear/Windy\nRarity: 6\nEvolution Stage: 3\nBase Attack level: 223"},
+    {name: "Mega-Y-Charizard", number: 006, description: "Type Combo: Fire/Flying\nWeather: Clear/Windy\nRarity: 6\nEvolution Stage: 3\nBase Attack level: 223"},
+    {name: "Squirtle", number: 007, description: "Type Combo: Water\nWeather: Rain\nRarity: 4\nEvolution Stage: 1\nBase Attack level: 94"},
+    {name: "Wartortle", number: 00, description: "Type Combo: Water\nWeather: Rain\nRarity: 5\nEvolution Stage: 2\nBase Attack level: 126"},
+    {name: "Blastoise", number: 00, description: "Type Combo: Water\nWeather: Rain\nRarity: 6\nEvolution Stage: 3\nBase Attack level: 171"},
+    {name: "Mega-Blastoise", number: 00, description: "Type Combo: Water\nWeather: Rain\nRarity: 6\nEvolution Stage: 3\nBase Attack level: 171"},
+    {name: "Caterpie", number: 002, description: "Type Combo: Bug\nWeather: Rain\nRarity: 1\nEvolution Stage: 1\nBase Attack level: 55"},
+    {name: "Metapod", number: 003, description: "Type Combo: Bug\nWeather: Rain\nRarity: 3\nEvolution Stage: 2\nBase Attack level: 45"},
+    {name: "Butterfree", number: 001, description: "Type Combo: Bug/Flying\nWeather: Rain/Windy\nRarity: 4\nEvolution Stage: 3\nBase Attack level: 167"},
+    {name: "Weedle", number: 002, description: "Type Combo: Bug/Poison\nWeather: Rain/Cloudy\nRarity: 1\nEvolution Stage: 1\nBase Attack level: 63"},
+    {name: "Kakuna", number: 003, description: "Type Combo: Bug/Poison\nWeather: Rain/Cloudy\nRarity: 3\nEvolution Stage: 2\nBase Attack level: 46"},
+    {name: "Beedrill", number: 001, description: "Type Combo: Bug/Poison\nWeather: Rain/Cloudy\nRarity: 4\nEvolution Stage: 3\nBase Attack level: 169"},
+    {name: "Mega-Beedrill", number: 014, description: "Type Combo: Bug/Poison\nWeather: Rain/Cloudy\nRarity: 4\nEvolution Stage: 3\nBase Attack level: 169"},
+    {name: "Pidgey", number: 015, description: "Type Combo: Normal/Flying\nWeather: Partly Cloudy/Windy\nRarity: 1\nEvolution Stage: 1\nBase Attack level: 85"},
+    {name: "Pidgeotto", number: 016, description: "Type Combo: Normal/Flying\nWeather: Partly Cloudy/Windy\nRarity: 3\nEvolution Stage: 2\nBase Attack level: 117"},
+    {name: "Pidgeot", number: 017, description: "Type Combo: Normal/Flying\nWeather: Partly Cloudy/Windy\nRarity: 4\nEvolution Stage: 3\nBase Attack level: 166"},
+    {name: "Mega-Pidgeot", number: 01, description: "Type Combo: Normal/Flying\nWeather: Partly Cloudy/Windy\nRarity: 4\nEvolution Stage: 3\nBase Attack level: 166"},
+    {name: "Ratatta", number: 01, description: "Type Combo: Normal\nWeather: Partly Cloudy\nRarity: 1\nEvolution Stage: 1\nBase Attack level: 103"},
+    {name: "Raticatte", number: 020, description: "Type Combo: Normal\nWeather: Partly Cloudy\nRarity: 4\nEvolution Stage: 2\nBase Attack level: 161"},
 ]
  
-// function toggle(){
-//     document.getElementById("num-dropdown").classList.toggle("show");
-// }
- 
-// dropdown menu
-// function searchPokemon() {
-//     var input = document.getElementById("num-input");       // get input from user
-//     var div = document.getElementById("num-dropdown");      
-//     var a = div.getElementsByTagName("a");  
-//     // go through number list and see if the values match the input                
-//     for (i = 0; i < a.length; i++) {
-//         // check if the input matches the inner text
-//       value = a[i].textContent || a[i].innerText;  
-//       if (value.indexOf(input) > -1) {
-//         // only show the list value if it matches the input
-//         a[i].style.display = "";
-//       } else {
-//         a[i].style.display = "none";
-//       }
-//     }
-//   }
-// ______________________________________________________________________________________
- 
- 
-// to validate input of the Numbers Search Bar
-function validateNumber(){
-    const numInput = document.getElementById('num-input').value;
-    if(!isNaN(numInput)){
-        byNumber(numInput);
-    }
-    else{
-        alert("Plase enter a number");
-    }
-}
- 
-function byNumber(){
-    // for(let i = 0; i < pokemon.length; i++){
-    //     if(pokemon[i].number === document.getElementById('num-input').value){
-    //         alert(`${pokemon[i].name}\n#${pokemon[i].number} \nType: ${pokemon[i].type}`);
-    //         console.log(document.getElementById('num-input').value);
-    //     }
-    // }
-}
- 
- 
-function pokemonInfo(){
-//     for(let i = 0; i < pokemon.length; i++){
-//         var $img = document.getElementsByTagName("img")[i];   // get alt name of the image clicked on
-//                 if(pokemon[i].name.toLowerCase() === $img.alt ){
-//                     console.log("clicked");
-//                 }
-//             }
-}
- 
-function show(i){
-    alert(`${pokemon[i-1].name}\n#${pokemon[i-1].number} \nType: ${pokemon[i-1].type}`);
-}
- 
-// to validate input of the Name
-function byName(){
-    // for(let i = 0; i < pokemon.length; i++){
-    //     if(pokemon[i].name === document.getElementById('name-input').value){
-    //         alert(`${pokemon[i].name}\n#${pokemon[i].number} \nType: ${pokemon[i].type}`);
-    //         console.log(document.getElementById('name-input').value);
-    //     }
-    // }
-}
 // to validate input of the String Search Bar
 function validateName(){
     const nameInput = document.getElementById('name-input').value;
-    if(isNaN(nameInput)){
-        byName(nameInput);
-    }
-    else{
+    if(!isNaN(nameInput)){
         alert("Plase enter a name");
     }
+}
+
+// to validate input of the Numbers Search Bar
+function validateNumber(){
+    const numInput = document.getElementById('num-input').value;
+    if(isNaN(numInput)){
+        alert("Plase enter a number");
+    }
+}
+// Function to search by name
+function byName() {
+    var nameInput = document.getElementById("name-input");       // get input from user
+    var sameCase = nameInput.value.toLowerCase();
+    var div = document.getElementById("pokemon-info");      
+    var a = div.getElementsByTagName("a");  
+    // go through number list and see if the values match the input                
+    for (i = 0; i < a.length; i++) {
+        // check if the input matches the inner text or text content
+      value = a[i].textContent || a[i].innerText;  
+      if (value.toLowerCase().indexOf(sameCase) > -1) {
+        // only show the list value if it matches the input
+        console.log(a[i]);
+        alert(`${pokemon[i].name}\n#${pokemon[i].number} \nDescription: ${pokemon[i].description}`);
+      } 
+    }
+  }
+//____________________________________________________________________________________________
+
+// to display the pokemon descriptions
+function showPokemon(){
+    // find pokemons that match the description
+
+    // display the pokemon descriptions that match the descriptions
+    
+
+}
+ 
+
+
+ 
+function byNumber(){
+    const numInput = document.getElementById('num-input').value;
+}
+ 
+
+function show(i){
+    alert(`${pokemon[i-1].name}\n#${pokemon[i-1].number} \nType: ${pokemon[i-1].type}`);
 }
