@@ -67,13 +67,14 @@ function entered(){
 }
 }
 
+var flag2 = false;
 // check if the enter key was pressed on the name input
 function entered2(){
   var input2 = document.getElementById('name-input');
-  if(flag == false){
+  if(flag2 == false){
   input2.addEventListener("keydown", function(e){
       if(e.key === "Enter"){
-        flag = true;
+        flag2 = true;
         e.preventDefault();
         byName();
       }
