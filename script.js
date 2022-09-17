@@ -28,57 +28,63 @@ let pokemon = [
     {name: "Ratatta", number: 19, description: "is a Normal with Partly Cloudy and a Rarity of 1. It is in its First Evolutionary Stage with a Base Attack Level of 103\n\n"},
     {name: "Raticatte", number: 20, description: "is a Normal with Partly Cloudy and a Rarity of 4. It is in its Second Evolutionary Stage with a Base Attack Level of 161\n\n"},
 ]
- 
+
+// to validate input of the Numbers Search Bar
+function validateNumber(){
+  // get the input value from search bar
+    var numInput = document.getElementById('num-input').value;  
+    // check that the input is a number between 1 and 20
+    if(isNaN(numInput) || numInput > 20 || numInput < 1){
+        alert("Please try again");
+    }
+}
+
+function entered(){
+  var input = document.getElementById('num-input');
+  input.addEventListener("keydown", function(e){
+    var flag = false;
+      if(e.key === "Enter" && flag == false){
+        flag = true;
+        e.preventDefault();
+        byNumber();
+      }
+  });
+  
+}
+
+function entered2(){
+  var input2 = document.getElementById('name-input');
+  input2.addEventListener("keydown", function(e){
+    var flag = false;
+      if(e.key === "Enter" && flag == false){
+        flag = true;
+        e.preventDefault();
+        byName();
+      }
+  });
+  
+}
+
 // to validate input of the String Search Bar
 function validateName(){
   // get the input value from search bar
     var nameInput = document.getElementById('name-input').value;
     // to get aplhabet values
     var alpha = /^[A-Za-z]+$/;
-
+    
     // if the input is too long or does not include only letter of the aplhabet, try again message
     if(nameInput.length > 25 || !nameInput.match(alpha)){
-        alert("Plase try again");
+        alert("Please try again");
     }
 }
 
-// to validate input of the Numbers Search Bar
-function validateNumber(){
-  // get the input value from search bar
-    var numInput = document.getElementById('num-input').value;
-    // check that the input is a number between 1 and 20
-    if(isNaN(numInput) || numInput > 20 || numInput < 1){
-        alert("Plase try again");
-    }
-}
-
-// Function to search by name
-function byName() {
-    var nameInput = document.getElementById("name-input");       // get input from user
-    var sameCase = nameInput.value.toLowerCase();                // so the comparison is not case-sensitive 
-    var ul = document.getElementById("pokemon-list");            
-    var h3 = ul.getElementsByTagName("h3");  
-    var counter = 0;        // to keep track of how many matches are added  
-    var matches = [];
-    // go through number list and see if the values match the input                
-    for (i = 0; i < h3.length; i++) {
-        // check if the input matches the inner text or text content
-      value = h3[i].textContent || h3[i].innerText; 
-       if (value.toLowerCase().indexOf(sameCase) > -1 && counter < 5) {
-        counter ++;
-        // only show the list value if it matches the input
-        matches[i] = `#${pokemon[i].number}. ${pokemon[i].name} ${pokemon[i].description}`;
-      } 
-    }
-    alert(matches.join(''));
-  }
- 
 function byNumber(){
     var numInput = document.getElementById('num-input').value;               // so the comparison is not case-senstive
     var ul = document.getElementById("pokemon-list");            
     var p = ul.getElementsByTagName("p");  
     var counter = 0;        // to keep track of how many matches are added  
     var matches = [];    
+    validateNumber();
     // go through number list and see if the values match the input                
     for (i = 0; i < p.length; i++) {
         value = p[i].textContent || p[i].innerText; 
@@ -87,14 +93,33 @@ function byNumber(){
       if (value.indexOf(numInput) > -1 && counter < 5) {
         counter ++;
         // only show the list value if it matches the input
-        matches[i] = `#${pokemon[i]?.number}. ${pokemon[i]?.name} ${pokemon[i]?.description}`;
+        matches[i] = `#${pokemon[i].number}. ${pokemon[i].name} ${pokemon[i].description}`;
       } 
     }
-
-    alert(matches.join(''));
+    if(matches.length != 0){
+      alert(matches.join(''));
+    }
 }
  
-
-function show(i){
-    alert(`${pokemon[i-1].name}\n#${pokemon[i-1].number} \nType: ${pokemon[i-1].type}`);
+// Function to search by name
+function byName() {
+  var nameInput = document.getElementById("name-input");       // get input from user
+  var sameCase = nameInput.value.toLowerCase();                // so the comparison is not case-sensitive 
+  var ul = document.getElementById("pokemon-list");            
+  var h3 = ul.getElementsByTagName("h3");  
+  var counter = 0;        // to keep track of how many matches are added  
+  var matches = [];
+  validateName();
+  // go through number list and see if the values match the input                
+  for (i = 0; i < h3.length; i++) {
+      // check if the input matches the inner text or text content
+    value = h3[i].textContent || h3[i].innerText; 
+     if (value.toLowerCase().indexOf(sameCase) > -1 && counter < 5) {
+      counter ++;
+      // only show the list value if it matches the input
+      matches[i] = `#${pokemon[i].number}. ${pokemon[i].name} ${pokemon[i].description}`;
+    } 
+  }
+  alert(matches.join(''));
 }
+

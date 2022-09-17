@@ -17,13 +17,13 @@
 <!-- the search bars displayed on top -->
 <div class="search">
     <input 
-        onkeyup="validateNumber()"
+        onkeypress="entered()"
         type="number" 
         id="num-input" 
         placeholder="Search by number...">
     <button class="btn" id="num-btn" onclick="byNumber()">Search</button>
     <input 
-        onkeyup="validateName()"
+        onkeyup="entered2()"
         type="text" 
         id="name-input" 
         placeholder="Search by name...">
