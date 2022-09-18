@@ -29,16 +29,6 @@ let pokemon = [
     {name: "Raticatte", number: 20, description: " a Normal Type Pokémon with Partly Cloudy Weather and a Rarity of 4. It is in its Second Evolutionary Stage with a Base Attack Level of 161\n\n"},
 ]
 
-// to validate input of the Numbers Search Bar
-function validateNumber(){
-  // get the input value from search bar
-    var numInput = document.getElementById('num-input').value;  
-    // check that the input is a number between 1 and 20
-    if(isNaN(numInput) || numInput > 20 || numInput < 1){
-        alert("Please try again");
-    }
-}
-
 // to validate input of the String Search Bar
 function validateName(){
   // get the input value from search bar
@@ -47,7 +37,7 @@ function validateName(){
     var alpha = /^[A-Za-z]+$/;
     
     // if the input is too long or does not include only letter of the aplhabet, try again message
-    if(nameInput.length > 25 || !nameInput.match(alpha)){
+    if(!nameInput.match(alpha) && !nameInput.match("")){
         alert("Please try again");
     }
 }
@@ -88,7 +78,6 @@ function byNumber(){
     var p = ul.getElementsByTagName("p");  
     var counter = 0;        // to keep track of how many matches are added  
     var matches = [];    
-    validateNumber();
     // go through number list and see if the values match the input                
     for (i = 0; i < p.length; i++) {
         value = p[i].textContent || p[i].innerText; 

@@ -1,6 +1,6 @@
 /* colour palette and set base*/
 :root{
-    --neutral-clr: #2588c2;
+    --neutral-clr: #35a4e5;
     --text-clr: #e1f4fc;
     --dark-clr: #0077bc;
     --light-clr: white;
@@ -44,17 +44,18 @@ h1{
     border-radius: 25px 5px 5px 25px;
     margin-left: 20px;
     box-sizing: border-box;
+    min-width: 200px;
 }
 
 p {
     font-size: medium;
     margin: none;
     color: var(--text-clr);
+    background-color: var(--dark-clr);
 }
 
 h3{
     color: var(--light-clr);
-    background-color: var(--dark-clr);
 }
 
 .btn{
