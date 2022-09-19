@@ -42,7 +42,7 @@ function validateName(){
     }
 }
 
-var flag = false;
+let flag = false;
 // check if the enter key was pressed on the number input
 function entered(){
   var input = document.getElementById('num-input');
@@ -57,7 +57,7 @@ function entered(){
 }
 }
 
-var flag2 = false;
+let flag2 = false;
 // check if the enter key was pressed on the name input
 function entered2(){
   var input2 = document.getElementById('name-input');
@@ -73,17 +73,18 @@ function entered2(){
 }
 
 function byNumber(){
-    var numInput = document.getElementById('num-input').value;               // so the comparison is not case-senstive
-    var ul = document.getElementById("pokemon-list");            
-    var p = ul.getElementsByTagName("p");  
-    var counter = 0;        // to keep track of how many matches are added  
-    var matches = [];    
+    let numInput = document.getElementById('num-input').value;               // so the comparison is not case-senstive
+    let ul = document.getElementById("pokemon-list");            
+    let p = ul.getElementsByTagName("p");  
+    let counter = 0;        // to keep track of how many matches are added  
+    let matches = [];    
+    let inp = numInput.replace(/^0+/, '');    // to ignore leading zeros
     // go through number list and see if the values match the input                
     for (i = 0; i < p.length; i++) {
         value = p[i].textContent || p[i].innerText; 
 
         // check if the input matches the inner text or text content
-      if (value.indexOf(numInput) > -1 && counter < 5) {
+      if (value.indexOf(inp) > -1 && counter < 5) {
         counter ++;
         // only show the list value if it matches the input
         matches[i] = `#${pokemon[i].number}. ${pokemon[i].name}${pokemon[i].description}`;
@@ -97,12 +98,12 @@ function byNumber(){
  
 // Function to search by name
 function byName() {
-  var nameInput = document.getElementById("name-input");       // get input from user
-  var sameCase = nameInput.value.toLowerCase();                // so the comparison is not case-sensitive 
-  var ul = document.getElementById("pokemon-list");            
-  var h3 = ul.getElementsByTagName("h3");  
-  var counter = 0;        // to keep track of how many matches are added  
-  var matches = [];
+  let nameInput = document.getElementById("name-input");       // get input from user
+  let sameCase = nameInput.value.toLowerCase();                // so the comparison is not case-sensitive 
+  let ul = document.getElementById("pokemon-list");            
+  let h3 = ul.getElementsByTagName("h3");  
+  let counter = 0;        // to keep track of how many matches are added  
+  let matches = [];
   validateName();
   // go through number list and see if the values match the input                
   for (i = 0; i < h3.length; i++) {
