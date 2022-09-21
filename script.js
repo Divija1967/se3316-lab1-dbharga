@@ -42,27 +42,26 @@ function validateName(){
     }
 }
 
-let flag = false;
 // check if the enter key was pressed on the number input
 function entered(){
   var input = document.getElementById('num-input');
-  if(flag == false){
   input.addEventListener("keydown", function(e){
+    e.stopImmediatePropagation(); // prevents the event from being called too many times
       if(e.key === "Enter"){
-        flag = true;
         e.preventDefault();
         byNumber();
       }
+      if(e.key === "e"){
+        e.preventDefault();
+      }
   });
 }
-}
 
-let flag2 = false;
 // check if the enter key was pressed on the name input
 function entered2(){
   var input2 = document.getElementById('name-input');
-  if(flag2 == false){
   input2.addEventListener("keydown", function(e){
+    e.stopImmediatePropagation();
       if(e.key === "Enter"){
         flag2 = true;
         e.preventDefault();
@@ -70,7 +69,7 @@ function entered2(){
       }
   });
 }
-}
+
 
 function byNumber(){
     let numInput = document.getElementById('num-input').value;               // so the comparison is not case-senstive
@@ -109,7 +108,12 @@ function byName() {
   for (i = 0; i < h3.length; i++) {
       // check if the input matches the inner text or text content
     value = h3[i].textContent || h3[i].innerText; 
-     if (value.toLowerCase().indexOf(sameCase) > -1 && counter < 5) {
+    // if the input matches a pokemon name exactly, move it to the top of the array
+    if(sameCase === value.toLowerCase() && counter < 5){
+      counter ++;
+      matches.unshift(`#${pokemon[i].number}. ${pokemon[i].name}:${pokemon[i].description}`);
+    }
+    else if (value.toLowerCase().indexOf(sameCase) > -1 && counter < 5) {
       counter ++;
       matches[i] = `#${pokemon[i].number}. ${pokemon[i].name}:${pokemon[i].description}`;
     } 
