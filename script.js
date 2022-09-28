@@ -90,9 +90,9 @@ function byNumber(){
       } 
     }
     // print the array if there was at least one match
-    if(matches.length != 0){
-      alert(matches.join(''));
-    }
+    // if(matches.length != 0){
+    //   alert(matches.join(''));
+    // }
 }
  
 // Function to search by name
@@ -119,10 +119,18 @@ function byName() {
     } 
   }
   // print the array if there was at least one match
-  if(matches.length != 0){
-    alert(matches.join(''));
-  }else{
-    alert("Please try again");
-  }
+  // if(matches.length != 0){
+  //   alert(matches.join(''));
+  // }else{
+  //   alert("Please try again");
+  // }
 }
 
+
+// start of lab 2 branch javascript
+// Use JavaScript to pick an element using document.getElementById() or document.querySelector() method, 
+      //pick element from html depending on if it matches the searched input 
+// creating new elements and content using .createElement() or .createTextNode() method 
+      // create a copy of that elemtent in the search results box up top
+// and then adding the newly created elements to the selected node using appendChild() method.
+      // add newly created elemnts to the new div in a list
