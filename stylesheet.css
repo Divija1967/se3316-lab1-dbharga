@@ -114,11 +114,6 @@ img {
     cursor: pointer;
 }
 
-/* hide the pokemon in list */
-#pokemon-info a{
-    display: none;
-}
-
 .references{
     background-color: var(--dark-clr);
     padding: 30px;
@@ -129,8 +124,9 @@ a{
 }
 
 .search-results{
-    background-color: var(--text-clr);
-    display: flex;
+    background-color: var(--neutral-clr);
+    display: inline-block;
+    color: var(--text-clr);
 }
 
 
