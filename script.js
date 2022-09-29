@@ -89,14 +89,27 @@ function byNumber(){
         counter ++;
         // only show the list value if it matches the input
         matches[i] = pokemon[i].number;
+        
+        // create new list element for every match
+        // for the list 
+        var newListElement = document.createElement('li');
+        newUl.appendChild(newListElement);
+        // for the numbers
+        var num = document.createElement('p');
+        var pokeNum = document.createTextNode(pokemon[i].number);
+        num.appendChild(pokeNum);
+        newListElement.appendChild(num);
+        // for the name
+        var pokeName = document.createTextNode(pokemon[i].name);
+        var h = document.createElement('h3');
+        h.appendChild(pokeName);
+        newListElement.appendChild(h);
+        // for the image
+
+        // for the description
+       
       } 
     }
-    // print the array if there was at least one match
-    if(matches.length != 0){
-      alert(matches.join(''));
-    }
-
-    // displayResults(matches);
 }
  
 // Function to search by name
@@ -124,7 +137,7 @@ function byName() {
   }
   // print the array if there was at least one match
   if(matches.length != 0){
-    displayResults(matches);
+   
   }
   // else{
   //   alert("Please try again");
@@ -141,20 +154,15 @@ function byName() {
       // add newly created elemnts to the new div in a list
 
 function displayResults(array){
-  // array.forEach(function(e){
-  //   // if the array name matches an id from the html displayed
-
-  //   // and add that list element to the other list
-
-  //   // display the other list at all time
-
-  //   var li = document.createElement('li');
-  //   var text = document.createTextNode(`${array[4]}`)
-  //   li.appendChild(text);
-  //   var ul = document.querySelector('#results-list')
-  //   ul.appendChild(li);
-  //   console.log(li);
-  // })
+  for(var i = 0; i < array.length; i++){
+    var newListElement = document.createElement('li');
+      var pokeName = document.createTextNode(pokemon[i].name);
+      var h = document.createElement('h3');
+      h.appendChild(pokeName);
+      newListElement.appendChild(h)
+      newUl.appendChild(newListElement);
+      console.log(newUl);
+  }
 }
 
 
