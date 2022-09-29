@@ -128,4 +128,10 @@ a{
     color: pink;
 }
 
+.search-results{
+    background-color: var(--text-clr);
+    display: flex;
+}
+
+
   

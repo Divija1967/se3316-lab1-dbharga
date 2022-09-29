@@ -15,10 +15,6 @@
 <h1>Pokémon Index</h1>
 <p id="intro">Find your Pokémon here!</p>
 
-<!-- new content block above existing pokemon -->
-<div class="searchResults">
-    
-</div>
 
 <!-- the search bars displayed on top -->
 <div class="search">
@@ -37,7 +33,16 @@
         placeholder="Search by name..."
         maxlength="25">
     <button class="btn" id="name-btn" onclick="byName()">Search Name</button>
-</div></div>
+</div>
+
+<!-- new content block above existing pokemon to show results -->
+<div class="search-results">
+    <ul id="results-list">
+        
+    </ul>
+</div>
+
+</div>
 
 <!-- pokemon images in an unordered list -->
 <ul id="pokemon-list">
