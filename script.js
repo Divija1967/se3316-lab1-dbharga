@@ -63,6 +63,44 @@ function byNumber(){
         // only show the list value if it matches the input
         matches[i] = pokemon[i].number;
 
+        displayResults(i, newUl);
+        // to clear the list
+        if(inp === ""){
+          clear(newUl);
+        }
+      } 
+      
+    }
+}
+ 
+// Function to search by name
+function byName() {
+  let nameInput = document.getElementById("name-input");       // get input from user
+  let sameCase = nameInput.value.toLowerCase();                // so the comparison is not case-sensitive 
+  let ul = document.getElementById("pokemon-list");            
+  let h3 = ul.getElementsByTagName("h3");  
+  let counter = 0;        // to keep track of how many matches are added  
+  let matches = [];
+  validateName(); 
+  let newUl = document.getElementById("results-list");
+  clear(newUl);
+  // go through number list and see if the values match the input                
+  for (i = 0; i < h3.length; i++) {
+      // check if the input matches the inner text or text content
+    value = h3[i].textContent; 
+    // if the input matches a pokemon name exactly, move it to the top of the array
+     if (value.toLowerCase().indexOf(sameCase) > -1 && counter < 5) {
+      counter ++;
+      matches[i] = pokemon[i].number;    
+      displayResults(i, newUl);  
+      if(sameCase === ""){
+        clear(newUl);
+      }
+    } 
+  }
+}
+
+function displayResults(i, newUl){
         // create new list element for every match
         // for the list 
         var newListElement = document.createElement('li');
@@ -88,78 +126,6 @@ function byNumber(){
         var pokeDesc = document.createTextNode(pokemon[i].description);
         var s = document.createElement('span');
         s.appendChild(pokeDesc);
-        newListElement.appendChild(s); 
-
-        // to clear the list
-        if(inp === ""){
-          clear(newUl);
-        }
-
-        console.log(pokeName);
-      } 
-      
-    }
-}
- 
-// Function to search by name
-function byName() {
-  let nameInput = document.getElementById("name-input");       // get input from user
-  let sameCase = nameInput.value.toLowerCase();                // so the comparison is not case-sensitive 
-  let ul = document.getElementById("pokemon-list");            
-  let h3 = ul.getElementsByTagName("h3");  
-  let counter = 0;        // to keep track of how many matches are added  
-  let matches = [];
-  validateName();
-  let newUl = document.getElementById("results-list");
-  // go through number list and see if the values match the input                
-  for (i = 0; i < h3.length; i++) {
-      // check if the input matches the inner text or text content
-    value = h3[i].textContent || h3[i].innerText; 
-    // if the input matches a pokemon name exactly, move it to the top of the array
-    if(sameCase === value.toLowerCase() && counter < 5){
-      counter ++;
-      matches.unshift(pokemon[i].number);
-    }
-    else if (value.toLowerCase().indexOf(sameCase) > -1 && counter < 5) {
-      counter ++;
-      matches[i] = pokemon[i].number;      
-    } 
-  }
-}
-
-
-// start of lab 2 branch javascript
-// Use JavaScript to pick an element using document.getElementById() or document.querySelector() method, 
-      //pick element from html depending on if it matches the searched input 
-// creating new elements and content using .createElement() or .createTextNode() method 
-      // create a copy of that elemtent in the search results box up top
-// and then adding the newly created elements to the selected node using appendChild() method.
-      // add newly created elemnts to the new div in a list
-
-function displayResults(i, newUl){
-        // create new list element for every match
-        // for the list 
-        var newListElement = document.createElement('li');
-        newUl.appendChild(newListElement);
-        // for the numbers
-        var num = document.createElement('p');
-        var pokeNum = document.createTextNode(pokemon[i].number);
-        num.appendChild(pokeNum);
-        newListElement.appendChild(num);
-        // for the name
-        var pokeName = document.createTextNode(pokemon[i].name);
-        var h = document.createElement('h3');
-        h.appendChild(pokeName);
-        newListElement.appendChild(h);
-        // for the image
-        var im = document.createElement('img');
-        im.src = pokemon[i].img;
-        newListElement.appendChild(im);
-        // for the description
-        var pokeDesc = document.createTextNode(pokemon[i].description);
-        var s = document.createElement('span');
-        s.classList.add('new-text');
-        s.appendChild(pokeDesc);
         newListElement.appendChild(s);
 }
 
@@ -169,6 +135,3 @@ function clear(element){
   }
 }
 
-
-// JUST ADD THINGS FROM THE ARRAY
-// LIKE ADD THE IMAGE AND THE APAN AND THE TITLE AND STUFF
