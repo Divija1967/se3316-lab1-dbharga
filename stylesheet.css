@@ -111,7 +111,7 @@ img {
 .new-poke{
     margin: 2%;
     opacity: 1;
-    border: 5px solid var(--highlight-clr);
+    border: 10px solid var(--highlight-clr);
     border-radius: 25px;
     vertical-align: top;
     text-align: center;

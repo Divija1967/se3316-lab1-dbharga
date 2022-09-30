@@ -1,3 +1,8 @@
+// add event listener for number input
+var myInput = document.getElementById("num-input");
+myInput.addEventListener('keyup', (event) => {
+    byNumber();
+});
 
 // array of pokemon objects: includes name, number, and descriptions of Pokémon
 let pokemon = [

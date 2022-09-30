@@ -7,14 +7,12 @@
 <meta name="author" content="Divija Bhargava">
 <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="stylesheet.css">
-<script src="script.js"></script>
 </head>
 <body>
     <div class="top">
 <!-- Place your content here -->
 <h1>Pokémon Index</h1>
 <p id="intro">Find your Pokémon here!</p>
-
 
 <!-- the search bars displayed on top -->
 <div class="search">
@@ -24,17 +22,16 @@
         id="num-input" 
         placeholder="Search by number..."
         min="1"
-        max="20"
-        onkeyup="byNumber()">
-    <button class="btn" id="num-btn" onclick="byNumber()">Search Number</button>
+        max="20">
+    <button class="btn" id="num-btn">Search Number</button>
     <input 
         class="search-input"
         type="text" 
         id="name-input" 
         placeholder="Search by name..."
         maxlength="25"
-        onkeyup="byName()">
-    <button class="btn" id="name-btn" onclick="byName()">Search Name</button>
+        >
+    <button class="btn" id="name-btn">Search Name</button>
 </div></div>
 
 <!-- new content block above existing pokemon to show results -->
@@ -186,6 +183,9 @@
     <li>Pokemon excel from: <a href="https://www.reddit.com/r/TheSilphRoad/comments/7p952h/pokemon_go_pokedex_spreadsheet/">https://www.reddit.com/r/TheSilphRoad/comments/7p952h/pokemon_go_pokedex_spreadsheet/</a></li>
 </ol>
 </div>
+
+<!-- javascript -->
+<script src="script.js"></script>
 
 </body>
 </html>
