@@ -42,35 +42,6 @@ function validateName(){
     }
 }
 
-// // check if the enter key was pressed on the number input
-// function entered(){
-//   var input = document.getElementById('num-input');
-//   input.addEventListener("keydown", function(e){
-//     e.stopImmediatePropagation(); // prevents the event from being called too many times
-//       if(e.key === "Enter"){
-//         e.preventDefault();
-//         byNumber();
-//       }
-//       if(e.key === "e"){
-//         e.preventDefault();
-//       }
-//   });
-// }
-
-// // check if the enter key was pressed on the name input
-// function entered2(){
-//   var input2 = document.getElementById('name-input');
-//   input2.addEventListener("keydown", function(e){
-//     e.stopImmediatePropagation();
-//       if(e.key === "Enter"){
-//         flag2 = true;
-//         e.preventDefault();
-//         byName();
-//       }
-//   });
-// }
-
-
 function byNumber(){
     let numInput = document.getElementById('num-input').value;               // so the comparison is not case-senstive
     let ul = document.getElementById("pokemon-list");   
@@ -81,7 +52,9 @@ function byNumber(){
     let counter = 0;        // to keep track of how many matches are added  
     let matches = [];    
     let inp = numInput.replace(/^0+/, '');    // to ignore leading zeros
-    // go through number list and see if the values match the input                
+    // go through number list and see if the values match the input        
+    clear(newUl);        
+
     for (i = 0; i < p.length; i++) {
         value = p[i].textContent;    
         // check if the input matches the inner tex t or text content
@@ -89,7 +62,7 @@ function byNumber(){
         counter ++;
         // only show the list value if it matches the input
         matches[i] = pokemon[i].number;
-        
+
         // create new list element for every match
         // for the list 
         var newListElement = document.createElement('li');
@@ -105,10 +78,24 @@ function byNumber(){
         h.appendChild(pokeName);
         newListElement.appendChild(h);
         // for the image
-
+        var im = document.createElement('img');
+        im.src = pokemon[i].img;
+        newListElement.appendChild(im);
         // for the description
-       
+        // var pokeDesc = document.createTextNode(pokemon[i].description);
+        // var s = document.createElement('span');
+        // s.classList.add('description');
+        // s.appendChild(pokeDesc);
+        // newListElement.appendChild(s); 
+
+        // to clear the list
+        if(inp === ""){
+          clear(newUl);
+        }
+
+        console.log(pokeName);
       } 
+      
     }
 }
  
@@ -121,6 +108,7 @@ function byName() {
   let counter = 0;        // to keep track of how many matches are added  
   let matches = [];
   validateName();
+  let newUl = document.getElementById("results-list");
   // go through number list and see if the values match the input                
   for (i = 0; i < h3.length; i++) {
       // check if the input matches the inner text or text content
@@ -128,20 +116,13 @@ function byName() {
     // if the input matches a pokemon name exactly, move it to the top of the array
     if(sameCase === value.toLowerCase() && counter < 5){
       counter ++;
-      matches.unshift(`#${pokemon[i].number}. ${pokemon[i].name}:${pokemon[i].description}`);
+      matches.unshift(pokemon[i].number);
     }
     else if (value.toLowerCase().indexOf(sameCase) > -1 && counter < 5) {
       counter ++;
-      matches[i] = `#${pokemon[i].number}. ${pokemon[i].name}:${pokemon[i].description}`;      
+      matches[i] = pokemon[i].number;      
     } 
   }
-  // print the array if there was at least one match
-  if(matches.length != 0){
-   
-  }
-  // else{
-  //   alert("Please try again");
-  // }
 }
 
 
@@ -153,15 +134,35 @@ function byName() {
 // and then adding the newly created elements to the selected node using appendChild() method.
       // add newly created elemnts to the new div in a list
 
-function displayResults(array){
-  for(var i = 0; i < array.length; i++){
-    var newListElement = document.createElement('li');
-      var pokeName = document.createTextNode(pokemon[i].name);
-      var h = document.createElement('h3');
-      h.appendChild(pokeName);
-      newListElement.appendChild(h)
-      newUl.appendChild(newListElement);
-      console.log(newUl);
+function displayResults(i, newUl){
+        // create new list element for every match
+        // for the list 
+        var newListElement = document.createElement('li');
+        newUl.appendChild(newListElement);
+        // for the numbers
+        var num = document.createElement('p');
+        var pokeNum = document.createTextNode(pokemon[i].number);
+        num.appendChild(pokeNum);
+        newListElement.appendChild(num);
+        // for the name
+        var pokeName = document.createTextNode(pokemon[i].name);
+        var h = document.createElement('h3');
+        h.appendChild(pokeName);
+        newListElement.appendChild(h);
+        // for the image
+        var im = document.createElement('img');
+        im.src = pokemon[i].img;
+        newListElement.appendChild(im);
+        // for the description
+        var pokeDesc = document.createTextNode(pokemon[i].description);
+        var s = document.createElement('span');
+        s.appendChild(pokeDesc);
+        newListElement.appendChild(s);
+}
+
+function clear(element){
+  while(element.firstChild){
+    element.removeChild(element.firstChild);
   }
 }
 

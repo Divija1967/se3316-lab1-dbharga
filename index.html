@@ -19,13 +19,16 @@
 <!-- the search bars displayed on top -->
 <div class="search">
     <input 
+        class="search-input"
         type="number" 
         id="num-input" 
         placeholder="Search by number..."
         min="1"
-        max="20">
+        max="20"
+        onkeyup="byNumber()">
     <button class="btn" id="num-btn" onclick="byNumber()">Search Number</button>
     <input 
+        class="search-input"
         type="text" 
         id="name-input" 
         placeholder="Search by name..."
