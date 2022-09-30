@@ -4,6 +4,12 @@ myInput.addEventListener('keyup', (event) => {
     byNumber();
 });
 
+// add event listener for name input
+var myInput = document.getElementById("name-input");
+myInput.addEventListener('keyup', (event) => {
+    byName();
+});
+
 // array of pokemon objects: includes name, number, and descriptions of Pokémon
 let pokemon = [
     {name: "Bulbasaur", number: 1, description: " a Grass/Poison Type Pokémon with Clear/Cloudy Weather and a Rarity of 4. It is in its First Evolutionary Stage with a Base Attack Level of 118\n\n", img: new Image().src = 'pokemon/1.png'},
