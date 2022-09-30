@@ -66,27 +66,29 @@ function byNumber(){
         // create new list element for every match
         // for the list 
         var newListElement = document.createElement('li');
+        newListElement.classList.add('new-poke');
         newUl.appendChild(newListElement);
+        // for the image
+        var im = document.createElement('img');
+        im.src = pokemon[i].img;
+        newListElement.appendChild(im);
         // for the numbers
         var num = document.createElement('p');
         var pokeNum = document.createTextNode(pokemon[i].number);
+        num.classList.add('new-text');
         num.appendChild(pokeNum);
         newListElement.appendChild(num);
         // for the name
         var pokeName = document.createTextNode(pokemon[i].name);
         var h = document.createElement('h3');
+        h.classList.add('new-text');
         h.appendChild(pokeName);
         newListElement.appendChild(h);
-        // for the image
-        var im = document.createElement('img');
-        im.src = pokemon[i].img;
-        newListElement.appendChild(im);
         // for the description
-        // var pokeDesc = document.createTextNode(pokemon[i].description);
-        // var s = document.createElement('span');
-        // s.classList.add('description');
-        // s.appendChild(pokeDesc);
-        // newListElement.appendChild(s); 
+        var pokeDesc = document.createTextNode(pokemon[i].description);
+        var s = document.createElement('span');
+        s.appendChild(pokeDesc);
+        newListElement.appendChild(s); 
 
         // to clear the list
         if(inp === ""){
@@ -156,6 +158,7 @@ function displayResults(i, newUl){
         // for the description
         var pokeDesc = document.createTextNode(pokemon[i].description);
         var s = document.createElement('span');
+        s.classList.add('new-text');
         s.appendChild(pokeDesc);
         newListElement.appendChild(s);
 }
