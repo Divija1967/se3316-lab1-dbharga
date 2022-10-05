@@ -60,7 +60,7 @@ function byNumber(){
     let newUl = document.getElementById("results-list");
 
     let p = ul.getElementsByTagName("p");  
-    let counter = 0;        // to keep track of how many matches are added  
+
     let matches = [];    
     let inp = numInput.replace(/^0+/, '');    // to ignore leading zeros
     // go through number list and see if the values match the input        
@@ -69,8 +69,8 @@ function byNumber(){
     for (i = 0; i < p.length; i++) {
         value = p[i].textContent;    
         // check if the input matches the inner tex t or text content
-      if (value.indexOf(inp) > -1 && counter < 5) {
-        counter ++;
+      if (value.indexOf(inp) > -1) {
+
         // only show the list value if it matches the input
         matches[i] = pokemon[i].number;
 
@@ -89,8 +89,7 @@ function byName() {
   let nameInput = document.getElementById("name-input");       // get input from user
   let sameCase = nameInput.value.toLowerCase();                // so the comparison is not case-sensitive 
   let ul = document.getElementById("pokemon-list");            
-  let h3 = ul.getElementsByTagName("h3");  
-  let counter = 0;        // to keep track of how many matches are added  
+  let h3 = ul.getElementsByTagName("h3");   
   let matches = [];
   validateName(); 
   let newUl = document.getElementById("results-list");
@@ -100,8 +99,7 @@ function byName() {
       // check if the input matches the inner text or text content
     value = h3[i].textContent; 
     // if the input matches a pokemon name exactly, move it to the top of the array
-     if (value.toLowerCase().indexOf(sameCase) > -1 && counter < 5) {
-      counter ++;
+     if (value.toLowerCase().indexOf(sameCase) > -1) {
       matches[i] = pokemon[i].number;    
       displayResults(i, newUl);  
       if(sameCase === ""){

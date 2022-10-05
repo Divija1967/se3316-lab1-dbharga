@@ -131,9 +131,7 @@ a{
 }
 
 .search-results{
-    /* background-color: var(--neutral-clr); */
     display: inline-block;
-    color: var(--text-clr);
 }
 
 
